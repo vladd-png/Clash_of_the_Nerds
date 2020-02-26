@@ -5,9 +5,9 @@ import Nerds from '../Nerds/Nerds';
 
 function App() {
   return (
-    <div className="App">
-      <Nerds />
+    <div className='App'>
       <Login />
+      <Nerds />
     </div>
   );
 }
