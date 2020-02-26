@@ -1,7 +1,11 @@
+.nerd-pile {
+  overflow: hidden;
+}
+
 #dali {
   position: absolute;
-  height: 400px;
-  top: 270px;
+  height: 20rem;
+  top: 25%;
   left: 79%;
   z-index: 2;
   animation: slide-in-right-dali 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -21,10 +25,10 @@
 
 #davinci {
   position: absolute;
-  height: 450px;
+  height: 28rem;
   left: 0%;
   z-index: 2;
-  top: 450px;
+  top: 45%;
   animation: slide-in-left-davinci 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes slide-in-left-davinci {
@@ -42,10 +46,10 @@
 
 #isaac {
   position: absolute;
-  height: 450px;
-  left: 18%;
+  height: 23rem;
+  left: 19%;
   z-index: 3;
-  top: 450px;
+  top: 50%;
   animation: slide-in-left-isaac 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
 }
 @keyframes slide-in-left-isaac {
@@ -63,9 +67,9 @@
 
 #newton {
   position: absolute;
-  height: 500px;
-  top: 400px;
-  left: 43%;
+  height: 27rem;
+  top: 40%;
+  left: 40%;
   z-index: 3;
   animation: slide-in-right-newton 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -73,7 +77,7 @@
   0% {
     -webkit-transform: translateX(1000px);
     transform: translateX(1000px);
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     -webkit-transform: translateX(0);
@@ -84,10 +88,9 @@
 
 #plato {
   position: absolute;
-  height: 200px;
-  height: 500px;
+  height: 28rem;
   left: 0%;
-  top: 200px;
+  top: 20%;
   animation: slide-in-left-plato 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
 }
 @keyframes slide-in-left-plato {
@@ -106,8 +109,8 @@
 
 #roman1 {
   position: absolute;
-  height: 500px;
-  top: 445px;
+  height: 25rem;
+  top: 50%;
   z-index: 4;
   left: 58%;
   animation: slide-in-right-roman1 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
@@ -127,9 +130,11 @@
 
 #roman2 {
   position: absolute;
-  height: 550px;
+  height: 25rem;
   animation: slide-in-right-roman2 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
-  top: -110px; z-index: 1
+  top: -12%;
+  z-index: 1;
+  left: 55%;
 }
 @keyframes slide-in-right-roman2 {
   0% {
@@ -146,10 +151,10 @@
 
 #vangogh {
   position: absolute;
-  height: 500px;
-  top: 400px;
+  height: 30rem;
+  top: 40%;
   z-index: 5;
-  left: 82%;
+  left: 80%;
   animation: slide-in-right-vangogh 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes slide-in-right-vangogh {

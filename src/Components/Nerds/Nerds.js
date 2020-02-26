@@ -12,15 +12,15 @@ import vangogh from '../../assets/vangogh.png';
 const Nerds = () => {
 
   return (
-    <section>
-      <img id='dali' className='bg-img-nerd' src={ dali } />
-      <img id='davinci' className='bg-img-nerd' src={ davinci } />
-      <img id='isaac' className='bg-img-nerd' src={ isaac } />
-      <img id='newton' className='bg-img-nerd' src={ newton } />
-      <img id='plato' className='bg-img-nerd' src={ plato } />
-      <img id='roman1' className='bg-img-nerd' src={ roman1 } />
-      <img id='roman2' className='bg-img-nerd' src={ roman2 } />
-      <img id='vangogh' className='bg-img-nerd' src={ vangogh } />
+    <section className='nerd-pile'>
+      <img id='dali' src={ dali } alt='Salvador Dali' />
+      <img id='davinci' src={ davinci } alt='Leonardo DaVinci' />
+      <img id='isaac' src={ isaac } alt='Isaac Newton' />
+      <img id='newton' src={ newton } alt='Albert Einstein' />
+      <img id='plato' src={ plato } alt='Plato' />
+      <img id='roman1' src={ roman1 } alt='Roman Man with Spear' />
+      <img id='roman2' src={ roman2 } alt='Roman Man with Green Cape' />
+      <img id='vangogh' src={ vangogh } alt='Vincent Van Gogh' />
     </section>
   )
 }

@@ -8,6 +8,7 @@ body {
   background-image: url('./assets/bg-greek.JPG');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 code {
