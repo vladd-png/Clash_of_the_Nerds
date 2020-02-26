@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Login from '../Login/Login';
 import Nerds from '../Nerds/Nerds';
 
-function App() {
-  return (
-    <div className='App'>
-      <Login />
+class App extends Component{
+  constructor() {
+    super()
+    this.state = {
+      user: {
+        name: '',
+        team: ''
+      },
+      trivia: []
+    }
+  }
+  addUser = (user) => {
+    this.setState({ user })
+  }
+  render() {
+
+    return (
+      <div className='App'>
+      <Login addUser={this.addUser}/>
       <Nerds />
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
