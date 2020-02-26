@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  /* background-image: url('./assets/bg-greek.JPG');
+  background-size: cover;
+  background-position: center; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
