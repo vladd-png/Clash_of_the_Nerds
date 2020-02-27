@@ -5,6 +5,8 @@ import Nerds from '../Nerds/Nerds';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
+import { addTrivia } from '../../actions';
+import { connect } from 'react-redux';
 
 class App extends Component{
   constructor() {
@@ -14,44 +16,43 @@ class App extends Component{
         name: '',
         team: ''
       },
-      chosen: ''
+      chosen: '',
+      trivia: []
     }
   }
   componentDidMount = () => {
-    fetch('https://opentdb.com/api.php?amount=10&category=17')
-    .then(response => response.json())
-    .then(science => {
-      this.setState({ science })
-    })
-    fetch('https://opentdb.com/api.php?amount=10&category=20')
+    let scienceTrivia = fetch('https://opentdb.com/api.php?amount=10&category=17')
       .then(response => response.json())
-      .then(mythology => {
-        this.setState({ mythology })
-      })
-    fetch('https://opentdb.com/api.php?amount=10&category=25')
+    let mythologyTrivia = fetch('https://opentdb.com/api.php?amount=10&category=20')
       .then(response => response.json())
-      .then(art => {
-        this.setState({ art })
+    let artTrivia = fetch('https://opentdb.com/api.php?amount=10&category=25')
+      .then(response => response.json())
+    Promise.all([scienceTrivia, artTrivia, mythologyTrivia])
+      .then(trivia => {
+        this.setState({ trivia })
+        this.props.loadTriviaToStore( trivia )
       })
   }
   addUser = (user) => {
     this.setState({ user })
-    this.setState({ chosen: this.state[user.team] })
+    this.setState({ chosen: user.team })
   }
   render() {
-
     return (
       <div className='App'>
       <Switch>
-        <section>
-          <Route exact path='/' render={() => <Login addUser={this.addUser}/>} />
-          <Route exact path='/' component={Nerds} />
-        </section>
+        <Route exact path='/' render={() => {
+          return (
+            <section>
+              <Login addUser={this.addUser}/>
+              <Nerds />
+            </section>
+          )}}/>
         <Route exact path='/test' render={() => {
           return (
             <section>
-              {!this.props.trivia.length && <LoadingPage />}
-              {this.props.trivia.length && <TestContainer allQuestions={this.props.trivia} />}
+              {!this.state.trivia.length && <LoadingPage />}
+              {this.state.trivia.length && <TestContainer allQuestions={this.props.chosen} />}
             </section>
           )}} />
       </Switch>
@@ -60,4 +61,12 @@ class App extends Component{
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  loadTriviaToStore: (trivia) => { dispatch(addTrivia(trivia)) }
+})
+
+export const mapStateToProps = state => ({
+  trivia: state
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
