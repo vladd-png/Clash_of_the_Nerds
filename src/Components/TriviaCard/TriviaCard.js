@@ -9,12 +9,14 @@ import './TriviaCard.scss';
 // incorrect_answers: (3) ["War", "Sun", "Fire"]
 
 const TriviaCard = (props) => {
-  // console.log(props.trivia);
+  let allAnswers = props.trivia.incorrect_answers.concat(props.trivia.correct_answer)
+  let formattedAnswers = allAnswers.map(answer => {
+    return <button type='button' className='trivia-choice' key={Math.random()}>{answer}</button>
+  })
   return (
     <div className='trivia-card'>
       <h1>{props.trivia.question}</h1>
-      <h1>{props.trivia.correct_answer}</h1>
-      <h1>{props.trivia.incorrect_answers}</h1>
+      <div>{formattedAnswers}</div>
     </div>
   )
 }

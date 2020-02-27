@@ -21,19 +21,6 @@ class App extends Component{
       trivia: []
     }
   }
-  // componentDidMount = () => {
-  //   let scienceTrivia = fetch('https://opentdb.com/api.php?amount=10&category=17')
-  //     .then(response => response.json())
-  //   let mythologyTrivia = fetch('https://opentdb.com/api.php?amount=10&category=20')
-  //     .then(response => response.json())
-  //   let artTrivia = fetch('https://opentdb.com/api.php?amount=10&category=25')
-  //     .then(response => response.json())
-  //   Promise.all([scienceTrivia, artTrivia, mythologyTrivia])
-  //     .then(trivia => {
-  //       this.setState({ trivia })
-  //       this.props.loadTriviaToStore( trivia )
-  //     })
-  // }
   fetchData = (team, level) => {
     console.log(team, level);
     fetch(`https://opentdb.com/api.php?amount=10&category=${team}&difficulty=${level}`)
