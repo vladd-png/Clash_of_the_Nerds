@@ -31,14 +31,16 @@ class TestContainer extends Component {
      const triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
      return (
        <section>
-         <article className='test-question'>
-          <h1>Question: {i + 1}</h1>
+          <h1 className='trivia-category'>{questions[i].category}</h1>
+          <h2 className='trivia-difficulty'>Difficulty: {questions[i].difficulty}</h2>
+          <article className='test-question'>
+          <h1 className='trivia-header'>Question: {i + 1}</h1>
           <h1 className='trivia-question'>{questions[i].question}</h1>
          </article>
          <article className='test-choice'>
           <div>{ i === 9 ?
             <section>
-              <h1 >{triviaData}</h1>
+              <h1>{triviaData}</h1>
               <Link to='/results'>
                 <button className='results-route' type='button'>See Results</button>
               </Link>

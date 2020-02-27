@@ -35,7 +35,7 @@ class TriviaCard extends Component{
     })
     return (
       <div className='trivia-card'>
-      <div>{formattedAnswers}</div>
+        <div>{formattedAnswers}</div>
       </div>
     )
   }
