@@ -35,6 +35,7 @@ class App extends Component{
   //     })
   // }
   fetchData = (team, level) => {
+    console.log(team, level);
     fetch(`https://opentdb.com/api.php?amount=10&category=${team}&difficulty=${level}`)
       .then(response => response.json())
       .then(trivia => {
