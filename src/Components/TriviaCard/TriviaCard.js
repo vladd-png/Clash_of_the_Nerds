@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addIncorrectGuess, addCorrectGuess } from '../../actions';
 
 
-
 // category: "Mythology"
 // type: "multiple"
 // difficulty: "easy"
@@ -28,9 +27,6 @@ class TriviaCard extends Component{
     }
     this.setState({ choice: event.target.value })
     this.props.changeCard(this.props.trivia)
-  }
-  submitAnswer = (event) => {
-
   }
   render() {
     let allAnswers = this.props.trivia.incorrect_answers.concat(this.props.trivia.correct_answer)

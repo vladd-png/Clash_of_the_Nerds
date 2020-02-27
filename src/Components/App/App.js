@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from '../Login/Login';
 import Nerds from '../Nerds/Nerds';
+import Results from '../Results/Results.js';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
@@ -51,6 +52,7 @@ class App extends Component{
               {this.props.trivia.trivia.length &&<TestContainer trivia={this.props.trivia} />}
             </section>
           )}} />
+        <Route exact path='/results' component={Results} />
       </Switch>
       </div>
     );
