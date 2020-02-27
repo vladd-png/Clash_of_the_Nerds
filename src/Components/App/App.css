@@ -12,3 +12,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+.trivia-board {
+  /* display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around; */
+}

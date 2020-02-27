@@ -47,9 +47,9 @@ class App extends Component{
           )}}/>
         <Route exact path='/test' render={() => {
           return (
-            <section>
+            <section className='trivia-board'>
               {!this.props.trivia.trivia.length && <LoadingPage />}
-              {this.props.trivia.trivia.length &&<TestContainer trivia={this.props.trivia} />}
+              {this.props.trivia.trivia.length && <TestContainer trivia={this.props.trivia} />}
             </section>
           )}} />
         <Route exact path='/results' render={() => {
