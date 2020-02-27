@@ -1,9 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import TriviaResults from '../TriviaResults/TriviaResults';
+import './Results.scss';
 
-const Results = () => {
+const Results = (props) => {
+  const allWrong = props.incorrectGuess.map(guess => {
+    console.log(guess);
+    return <TriviaResults result={guess} />
+  })
   return (
-    <h1>Results Page</h1>
+    <section id='all-results'>
+      {allWrong}
+    </section>
   )
 }
 
-export default Results;
+export const mapStateToProps = state => ({
+  correctGuess: state.correctGuess,
+  incorrectGuess: state.incorrectGuess
+});
+
+export default connect(mapStateToProps)(Results)
