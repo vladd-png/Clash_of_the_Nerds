@@ -13,8 +13,8 @@ import { addIncorrectGuess, addCorrectGuess } from '../../actions';
 // incorrect_answers: (3) ["War", "Sun", "Fire"]
 
 class TriviaCard extends Component{
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       choice: ''
     }
@@ -27,6 +27,7 @@ class TriviaCard extends Component{
       this.props.loadIncorrectGuessToStore(event.target.value)
     }
     this.setState({ choice: event.target.value })
+    this.props.changeCard(this.props.trivia)
   }
   submitAnswer = (event) => {
 

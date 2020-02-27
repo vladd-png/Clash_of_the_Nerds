@@ -23,7 +23,7 @@ class TestContainer extends Component {
      this.props.trivia.trivia.forEach(data => {
        questions.push(data)
      })
-     const triviaData = <TriviaCard trivia={ questions[i] }/>
+     const triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
      return (
        <section>
          <article className='test-question'>
@@ -31,7 +31,6 @@ class TestContainer extends Component {
          </article>
          <article className='test-choice'>
           <h1>{triviaData}</h1>
-          <button type='button' onClick={() => this.changeCard(questions[i])}>Next Question</button>
          </article>
          <article className='test-progress'>
           <h1></h1>
