@@ -11,12 +11,12 @@ class TestContainer extends Component {
   constructor() {
     super()
     this.state={
-      chosenAnswer: []
+      currentQuestion: []
     }
   }
   changeCard = (triviaData) => {
     i++
-    this.setState({ chosenAnswer: [...this.state.chosenAnswer, triviaData] })
+    this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
   }
    render() {
      questions = [];
@@ -26,16 +26,16 @@ class TestContainer extends Component {
      const triviaData = <TriviaCard trivia={ questions[i] }/>
      return (
        <section>
-       <article className='test-question'>
-       <h1>{triviaData}</h1>
-       <button type='button' onClick={() => this.changeCard(questions[i])}>Next Question</button>
-       </article>
-       <article className='test-choice'>
-       <h1>Hello</h1>
-       </article>
-       <article className='test-progress'>
-       <h1>Hello</h1>
-       </article>
+         <article className='test-question'>
+          <h1 className='trivia-question'>{questions[i].question}</h1>
+         </article>
+         <article className='test-choice'>
+          <h1>{triviaData}</h1>
+          <button type='button' onClick={() => this.changeCard(questions[i])}>Next Question</button>
+         </article>
+         <article className='test-progress'>
+          <h1></h1>
+         </article>
        </section>
      )
    }
