@@ -1,8 +1,8 @@
-// import { moviesReducer } from './movies';
+import { triviaReducer } from './trivia';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-    user: null
+    trivia: triviaReducer
 })
 
 export default rootReducer;
