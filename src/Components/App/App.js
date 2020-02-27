@@ -5,6 +5,8 @@ import Nerds from '../Nerds/Nerds';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
+import { addTrivia } from '../../actions';
+import { connect } from 'react-redux';
 
 class App extends Component{
   constructor() {
@@ -12,46 +14,54 @@ class App extends Component{
     this.state = {
       user: {
         name: '',
-        team: ''
+        team: '20',
+        level: 'easy'
       },
-      chosen: ''
+      chosen: '20',
+      trivia: []
     }
   }
-  componentDidMount = () => {
-    fetch('https://opentdb.com/api.php?amount=10&category=17')
-    .then(response => response.json())
-    .then(science => {
-      this.setState({ science })
-    })
-    fetch('https://opentdb.com/api.php?amount=10&category=20')
+  // componentDidMount = () => {
+  //   let scienceTrivia = fetch('https://opentdb.com/api.php?amount=10&category=17')
+  //     .then(response => response.json())
+  //   let mythologyTrivia = fetch('https://opentdb.com/api.php?amount=10&category=20')
+  //     .then(response => response.json())
+  //   let artTrivia = fetch('https://opentdb.com/api.php?amount=10&category=25')
+  //     .then(response => response.json())
+  //   Promise.all([scienceTrivia, artTrivia, mythologyTrivia])
+  //     .then(trivia => {
+  //       this.setState({ trivia })
+  //       this.props.loadTriviaToStore( trivia )
+  //     })
+  // }
+  fetchData = (team, level) => {
+    fetch(`https://opentdb.com/api.php?amount=10&category=${team}&difficulty=${level}`)
       .then(response => response.json())
-      .then(mythology => {
-        this.setState({ mythology })
-      })
-    fetch('https://opentdb.com/api.php?amount=10&category=25')
-      .then(response => response.json())
-      .then(art => {
-        this.setState({ art })
+      .then(trivia => {
+        this.setState({ trivia })
+        this.props.loadTriviaToStore( trivia.results )
       })
   }
   addUser = (user) => {
     this.setState({ user })
-    this.setState({ chosen: this.state[user.team] })
+    this.setState({ chosen: user.team })
   }
   render() {
-
     return (
       <div className='App'>
       <Switch>
-        <section>
-          <Route exact path='/' render={() => <Login addUser={this.addUser}/>} />
-          <Route exact path='/' component={Nerds} />
-        </section>
+        <Route exact path='/' render={() => {
+          return (
+            <section>
+              <Login addUser={this.addUser} fetchData={this.fetchData}/>
+              <Nerds />
+            </section>
+          )}}/>
         <Route exact path='/test' render={() => {
           return (
             <section>
-              {!this.props.trivia.length && <LoadingPage />}
-              {this.props.trivia.length && <TestContainer allQuestions={this.props.trivia} />}
+              {!this.props.trivia.trivia.length && <LoadingPage />}
+              {this.props.trivia.trivia.length &&<TestContainer trivia={this.props.trivia} />}
             </section>
           )}} />
       </Switch>
@@ -60,4 +70,12 @@ class App extends Component{
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  loadTriviaToStore: (trivia) => { dispatch(addTrivia(trivia)) }
+})
+
+export const mapStateToProps = state => ({
+  trivia: state
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
