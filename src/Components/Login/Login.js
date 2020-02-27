@@ -28,7 +28,7 @@ class Login extends Component {
         <select className='form-choice' onChange={(event) => this.setState({team: event.target.value})}>
           <option value='20'>Mythology</option>
           <option value='17'>Science & Nature</option>
-          <option value='25'>Art</option>
+          <option value='9'>General Knowledge</option>
         </select>
         <select className='form-choice' onChange={(event) => this.setState({level: event.target.value})}>
           <option value='easy'>Easy</option>
