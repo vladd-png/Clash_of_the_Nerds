@@ -13,22 +13,20 @@ class App extends Component{
       user: {
         name: '',
         team: ''
-      }
+      },
+      chosen: ''
     }
   }
-  addUser = (user) => {
-    this.setState({ user })
-  }
   componentDidMount = () => {
+    fetch('https://opentdb.com/api.php?amount=10&category=17')
+    .then(response => response.json())
+    .then(science => {
+      this.setState({ science })
+    })
     fetch('https://opentdb.com/api.php?amount=10&category=20')
       .then(response => response.json())
       .then(mythology => {
         this.setState({ mythology })
-      })
-    fetch('https://opentdb.com/api.php?amount=10&category=17')
-      .then(response => response.json())
-      .then(science => {
-        this.setState({ science })
       })
     fetch('https://opentdb.com/api.php?amount=10&category=25')
       .then(response => response.json())
@@ -36,14 +34,18 @@ class App extends Component{
         this.setState({ art })
       })
   }
+  addUser = (user) => {
+    this.setState({ user })
+    this.setState({ chosen: this.state[user.team] })
+  }
   render() {
 
     return (
       <div className='App'>
       <Switch>
         <section>
-          <Route exact path='/login' render={() => <Login addUser={this.addUser}/>} />
-          <Route exact path='/login' component={Nerds} />
+          <Route exact path='/' render={() => <Login addUser={this.addUser}/>} />
+          <Route exact path='/' component={Nerds} />
         </section>
         <Route exact path='/test' render={() => {
           return (
