@@ -1,0 +1,19 @@
+#all-results {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.total-results {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 5px solid #662324;
+  height: 100px;
+  width: 400px;
+  padding: 35px;
+  z-index: 100;
+}
+
+.wrong-results {
+  position: relative;
+  z-index: 100;
+}

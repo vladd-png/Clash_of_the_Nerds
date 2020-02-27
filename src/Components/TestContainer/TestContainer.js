@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Results from '../Results/Results.js';
 import TriviaCard from '../TriviaCard/TriviaCard';
 import './TestContainer.scss';
 import { addTrivia } from '../../actions';
@@ -11,26 +13,39 @@ class TestContainer extends Component {
   constructor() {
     super()
     this.state={
-      currentQuestion: []
+      currentQuestion: [],
+      redirect: false
     }
   }
   changeCard = (triviaData) => {
-    i++
-    this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
+    if (i < 9 ) {
+      i++
+      this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
+    }
   }
    render() {
      questions = [];
-     this.props.trivia.trivia.forEach(data => {
-       questions.push(data)
+     this.props.trivia.trivia.forEach(question => {
+       questions.push(question)
      })
      const triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
      return (
        <section>
-         <article className='test-question'>
+          <h1 className='trivia-category'>{questions[i].category}</h1>
+          <h2 className='trivia-difficulty'>Difficulty: {questions[i].difficulty}</h2>
+          <article className='test-question'>
+          <h1 className='trivia-header'>Question: {i + 1}</h1>
           <h1 className='trivia-question'>{questions[i].question}</h1>
          </article>
          <article className='test-choice'>
-          <h1>{triviaData}</h1>
+          <div>{ i === 9 ?
+            <section>
+              <h1>{triviaData}</h1>
+              <Link to='/results'>
+                <button className='results-route' type='button'>See Results</button>
+              </Link>
+            </section>
+            : <h1>{triviaData}</h1> }</div>
          </article>
          <article className='test-progress'>
           <h1></h1>
