@@ -8,9 +8,16 @@ const Results = (props) => {
     console.log(guess);
     return <TriviaResults result={guess} />
   })
+  const totalScore = (10 - props.incorrectGuess.length)
+  console.log(totalScore);
   return (
     <section id='all-results'>
-      {allWrong}
+      <div className='total-results'>
+        <h1>You Scored {totalScore} out of 10 Correct</h1>
+      </div>
+      <div className='wrong-results'>
+        {allWrong}
+      </div>
     </section>
   )
 }
