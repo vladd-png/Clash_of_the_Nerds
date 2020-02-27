@@ -52,7 +52,13 @@ class App extends Component{
               {this.props.trivia.trivia.length &&<TestContainer trivia={this.props.trivia} />}
             </section>
           )}} />
-        <Route exact path='/results' component={Results} />
+        <Route exact path='/results' render={() => {
+          return (
+            <section>
+              <Results />
+              <Nerds />
+            </section>
+          )}} />
       </Switch>
       </div>
     );
