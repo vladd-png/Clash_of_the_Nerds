@@ -26,7 +26,7 @@
 #davinci {
   position: absolute;
   height: 28rem;
-  left: 0%;
+  left: -5%;
   z-index: 2;
   top: 45%;
   animation: slide-in-left-davinci 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -47,7 +47,7 @@
 #isaac {
   position: absolute;
   height: 23rem;
-  left: 19%;
+  left: 13%;
   z-index: 3;
   top: 50%;
   animation: slide-in-left-isaac 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
