@@ -4,8 +4,6 @@ import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
 import { addTrivia, addUser } from '../../actions';
 
-
-
 describe('App', () => {
 
   describe('fetchData', () => {
@@ -17,10 +15,41 @@ describe('App', () => {
 
     describe('mapStateToProps', () => {
       it('should be able to update state', () => {
-        let mockState = {}
-
+        let mockState = [{
+          category: "Mythology",
+          type: "multiple",
+          difficulty: "easy",
+          question: "Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?",
+          correct_answer: "Orpheus",
+          incorrect_answers: (3) ["Hercules", "Perseus", "Daedalus"],
+          userGuess: "Perseus"
+        },{
+          category: "Mythology",
+          type: "multiple",
+          difficulty: "medium",
+          question: "Hera is god of...",
+          correct_answer: "Marriage",
+          incorrect_answers: ["Agriculture", "Sea", "War"],
+          userGuess: "Sea"
+        }]
         const expected = {
-          trivia: {},
+          trivia: [{
+            category: "Mythology",
+            type: "multiple",
+            difficulty: "easy",
+            question: "Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?",
+            correct_answer: "Orpheus",
+            incorrect_answers: (3) ["Hercules", "Perseus", "Daedalus"],
+            userGuess: "Perseus"
+          },{
+            category: "Mythology",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Hera is god of...",
+            correct_answer: "Marriage",
+            incorrect_answers: ["Agriculture", "Sea", "War"],
+            userGuess: "Sea"
+          }],
         }
         const result = mapStateToProps(mockState)
         expect(result).toEqual(expected)
