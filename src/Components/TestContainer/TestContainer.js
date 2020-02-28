@@ -17,17 +17,38 @@ class TestContainer extends Component {
       redirect: false
     }
   }
+  componentDidMount = () => {
+    i = 0;
+  }
   changeCard = (triviaData) => {
     if (i < 9 ) {
       i++
       this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
     }
   }
+  formatQuestion = () => {
+    questions = [];
+    this.props.trivia.trivia.forEach(question => {
+      if (question.question.includes('&#039;')) {
+        let newQuestionObj = { ...question, question: question.question.replace('&#039;', '\'').replace('&#039;', '\'') }
+        questions.push(newQuestionObj)
+      } else if (question.question.includes('&amp;')) {
+        let newQuestionObj = { ...question, question: question.question.replace('&amp;', '&') }
+        questions.push(newQuestionObj)
+      } else if (question.question.includes('&quot;')) {
+        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"') }
+        questions.push(newQuestionObj)
+      } else if (question.question.includes('&rsquo;s')) {
+        let newQuestionObj = { ...question, question: question.question.replace('&rsquo;s', '\'s') }
+        questions.push(newQuestionObj)
+      } else {
+        questions.push(question)
+      }
+    })
+    return questions;
+  }
    render() {
-     questions = [];
-     this.props.trivia.trivia.forEach(question => {
-       questions.push(question)
-     })
+     this.formatQuestion();
      const triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
      return (
        <section>
