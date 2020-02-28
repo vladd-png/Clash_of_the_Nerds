@@ -4,16 +4,34 @@
 }
 
 .total-results {
-  position: relative;
+  position: fixed;
   background-color: rgba(255, 255, 255, 0.9);
   border: 5px solid #662324;
-  height: 100px;
+  height: 200px;
   width: 400px;
-  padding: 35px;
+  padding: 55px;
   z-index: 100;
+  float: left;
+  margin: 100px;
+  font-size: 30px;
 }
 
 .wrong-results {
   position: relative;
   z-index: 100;
+  float: right;
+  margin-right: 20%;
+  margin-top: 100px;
+  margin-bottom: 300px;
+}
+
+#percent-correct {
+  margin-top: 350px;
+}
+
+.wrong-title {
+  font-size: 30px;
+  color: #FFF;
+  margin-bottom: 20px;
+  margin-top: -60px;
 }

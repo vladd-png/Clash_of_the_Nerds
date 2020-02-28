@@ -1,0 +1,31 @@
+.nav-bar {
+  background-color: #662324;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 150;
+}
+
+.user-name-nav {
+  color: #FFF;
+  font-size: 25px;
+  float: left;
+  margin-left: 50px;
+}
+
+.home-btn {
+  color: #FFF;
+  height: 35px;
+  font-size: 20px;
+  margin-right: 50px;
+  width: 100px;
+  color: #662324;
+  border-radius: 5px;
+}
+
+.small-title-logo {
+  height: 100px;
+}
