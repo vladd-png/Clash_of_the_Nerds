@@ -20,7 +20,7 @@
   position: relative;
   z-index: 100;
   float: right;
-  margin-right: 20%;
+  margin-right: 10%;
   margin-top: 100px;
   margin-bottom: 300px;
 }
@@ -34,4 +34,13 @@
   color: #FFF;
   margin-bottom: 20px;
   margin-top: -60px;
+}
+
+.correct-results {
+  position: relative;
+  z-index: 100;
+  float: right;
+  margin-top: 100px;
+  margin-bottom: 300px;
+  margin-right: 50px;
 }
