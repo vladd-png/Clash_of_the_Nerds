@@ -1,3 +1,8 @@
+export const addUser = (user) => ({
+    type: 'ADD_USER',
+    user
+})
+
 export const addTrivia = (trivia) => ({
     type: 'ADD_TRIVIA',
     trivia

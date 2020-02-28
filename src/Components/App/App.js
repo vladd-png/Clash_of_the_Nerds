@@ -4,10 +4,12 @@ import Login from '../Login/Login';
 import Nerds from '../Nerds/Nerds';
 import Results from '../Results/Results.js';
 import LoadingPage from '../LoadingPage/LoadingPage';
+import Nav from '../Nav/Nav';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
-import { addTrivia } from '../../actions';
+import { addTrivia, addUser, clearStore } from '../../actions';
 import { connect } from 'react-redux';
+
 
 class App extends Component{
   constructor() {
@@ -33,6 +35,7 @@ class App extends Component{
   addUser = (user) => {
     this.setState({ user })
     this.setState({ chosen: user.team })
+    this.props.loadUserToStore( user )
   }
   render() {
     return (
@@ -49,12 +52,13 @@ class App extends Component{
           return (
             <section className='trivia-board'>
               {!this.props.trivia.trivia.length && <LoadingPage />}
-              {this.props.trivia.trivia.length && <TestContainer trivia={this.props.trivia} />}
+              {this.props.trivia.trivia.length && <section><Nav /><TestContainer trivia={this.props.trivia} /></section>}
             </section>
           )}} />
         <Route exact path='/results' render={() => {
           return (
             <section>
+              <Nav />
               <Results />
               <Nerds />
             </section>
@@ -66,7 +70,8 @@ class App extends Component{
 }
 
 export const mapDispatchToProps = dispatch => ({
-  loadTriviaToStore: (trivia) => { dispatch(addTrivia(trivia)) }
+  loadTriviaToStore: (trivia) => { dispatch(addTrivia(trivia)) },
+  loadUserToStore: (user) => { dispatch(addUser(user)) }
 })
 
 export const mapStateToProps = state => ({
