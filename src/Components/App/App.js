@@ -9,9 +9,10 @@ import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
 import { addTrivia, addUser, clearStore } from '../../actions';
 import { connect } from 'react-redux';
+import { getTrivia } from '../../apiCalls/apiCalls.js';
 
 
-class App extends Component{
+export class App extends Component{
   constructor() {
     super()
     this.state = {
@@ -25,8 +26,7 @@ class App extends Component{
     }
   }
   fetchData = (team, level) => {
-    fetch(`https://opentdb.com/api.php?amount=10&category=${team}&difficulty=${level}`)
-      .then(response => response.json())
+    getTrivia(team, level)
       .then(trivia => {
         this.setState({ trivia })
         this.props.loadTriviaToStore( trivia.results )

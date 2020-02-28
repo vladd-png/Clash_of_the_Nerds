@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match snapshot 1`] = `
+<section
+  className="nav-bar"
+>
+  <h1
+    className="user-name-nav"
+  >
+    Welcome 
+    Jessica Rabbit
+  </h1>
+  <img
+    alt="clash of the nerds logo but small"
+    className="small-title-logo"
+    src="logo-small.png"
+  />
+  <Link
+    to="/"
+  >
+    <button
+      className="home-btn"
+      type="button"
+    >
+      Quit
+    </button>
+  </Link>
+</section>
+`;

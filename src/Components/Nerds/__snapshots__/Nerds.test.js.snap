@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nerds should match snapshot 1`] = `
+<section
+  className="nerd-pile"
+>
+  <img
+    alt="Salvador Dali"
+    id="dali"
+    src="dali.png"
+  />
+  <img
+    alt="Leonardo DaVinci"
+    id="davinci"
+    src="davinci.png"
+  />
+  <img
+    alt="Isaac Newton"
+    id="isaac"
+    src="isaac.png"
+  />
+  <img
+    alt="Albert Einstein"
+    id="newton"
+    src="newton.png"
+  />
+  <img
+    alt="Plato"
+    id="plato"
+    src="plato.png"
+  />
+  <img
+    alt="Roman Man with Spear"
+    id="roman1"
+    src="roman-guy.png"
+  />
+  <img
+    alt="Roman Man with Green Cape"
+    id="roman2"
+    src="roman-guy-2.png"
+  />
+  <img
+    alt="Vincent Van Gogh"
+    id="vangogh"
+    src="vangogh.png"
+  />
+</section>
+`;

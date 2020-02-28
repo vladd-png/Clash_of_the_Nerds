@@ -9,7 +9,7 @@ import roman1 from '../../assets/roman-guy.png';
 import roman2 from '../../assets/roman-guy-2.png';
 import vangogh from '../../assets/vangogh.png';
 
-const Nerds = () => {
+export const Nerds = () => {
 
   return (
     <section className='nerd-pile'>
