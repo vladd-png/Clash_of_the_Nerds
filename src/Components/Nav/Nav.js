@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import small from '../../assets/logo-small.png';
 
 
-const Nav = (props) => {
+export const Nav = (props) => {
   return (
     <section className='nav-bar'>
       <h1 className='user-name-nav'>Welcome {props.user[0].name}</h1>

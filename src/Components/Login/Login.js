@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 import logo from '../../assets/logo.png';
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super()
     this.state = {

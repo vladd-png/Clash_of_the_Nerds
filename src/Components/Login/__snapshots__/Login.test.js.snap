@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match snapshot 1`] = `
+<form
+  className="login-form"
+>
+  <img
+    alt="clash of the nerds logo"
+    className="title-logo"
+    src="logo.png"
+  />
+  <input
+    className="user-name"
+    maxLength="25"
+    onChange={[Function]}
+    placeholder="name"
+    type="text"
+    value=""
+  />
+  <h3>
+    Choose Your Battle
+  </h3>
+  <select
+    className="form-choice"
+    onChange={[Function]}
+  >
+    <option
+      value="20"
+    >
+      Mythology
+    </option>
+    <option
+      value="17"
+    >
+      Science & Nature
+    </option>
+    <option
+      value="9"
+    >
+      General Knowledge
+    </option>
+    <option
+      value="27"
+    >
+      Animals
+    </option>
+    <option
+      value="19"
+    >
+      Mathematics
+    </option>
+  </select>
+  <select
+    className="form-choice"
+    onChange={[Function]}
+  >
+    <option
+      value="easy"
+    >
+      Easy
+    </option>
+    <option
+      value="medium"
+    >
+      Medium
+    </option>
+    <option
+      value="hard"
+    >
+      Hard
+    </option>
+  </select>
+  <Link
+    to="/test"
+  >
+    <button
+      className="submit-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      Ready to Rumble
+    </button>
+  </Link>
+</form>
+`;
