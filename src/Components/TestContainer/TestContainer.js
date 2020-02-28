@@ -5,9 +5,9 @@ import TriviaCard from '../TriviaCard/TriviaCard';
 import './TestContainer.scss';
 import { addTrivia } from '../../actions';
 import { connect } from 'react-redux';
-let i = 0;
 let currentQuestion, triviaData;
 let questions;
+let i = 0;
 
 class TestContainer extends Component {
   constructor() {
@@ -22,8 +22,15 @@ class TestContainer extends Component {
   }
   changeCard = (triviaData) => {
     if (i < 9 ) {
+      console.log('first', i);
       i++
       this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
+      // return triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
+    } else {
+      console.log('second', i);
+      return null
+      // i = 9;
+      // return i
     }
   }
   formatQuestion = () => {
@@ -61,10 +68,7 @@ class TestContainer extends Component {
          <article className='test-choice'>
           <div>{ i === 9 ?
             <section>
-              <h1>{triviaData}</h1>
-              <Link to='/results'>
-                <button className='results-route' type='button'>See Results</button>
-              </Link>
+              <Link to='/results'><h1>{triviaData}</h1></Link>
             </section>
             : <h1>{triviaData}</h1> }</div>
          </article>

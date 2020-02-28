@@ -17,3 +17,7 @@ export const addIncorrectGuess = (guess) => ({
   type: 'ADD_INCORRECT_GUESS',
   guess
 })
+
+export const resetAnswers = () => ({
+  type: 'RESET_STORE_ANSWERS'
+})
