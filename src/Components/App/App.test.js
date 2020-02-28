@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
+import { addTrivia, addUser } from '../../actions';
+
 
 
 describe('App', () => {
@@ -13,38 +15,57 @@ describe('App', () => {
       wrapper = shallow(<App />)
     })
 
-    it('should call fetchData when component mounts with the correct url', () => {
-      window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve({})
-        });
+    describe('mapStateToProps', () => {
+      it('should be able to update state', () => {
+        let mockState = {}
+
+        const expected = {
+          trivia: {},
+        }
+        const result = mapStateToProps(mockState)
+        expect(result).toEqual(expected)
       })
-      let mockTeam = '25';
-      let mockLevel = 'easy';
-      wrapper.instance().fetchData(mockTeam, mockLevel)
-      expect(window.fetch).toHaveBeenCalledWith(`https://opentdb.com/api.php?amount=10&category=${mockTeam}&difficulty=${mockLevel}`)
     })
-  })
 
-  describe('mapStateToProps', () => {
-    it('should be able to update state', () => {
-      let mockState = {}
+    describe('mapDispatchToProps', () => {
+      it('should call dispatch with the trivia results action when loadTriviaToStore is called', () => {
+        const mockDispatch = jest.fn();
+        const trivia = [{
+          category: "Mythology",
+          type: "multiple",
+          difficulty: "easy",
+          question: "Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?",
+          correct_answer: "Orpheus",
+          incorrect_answers: (3) ["Hercules", "Perseus", "Daedalus"],
+          userGuess: "Perseus"
+        },{
+          category: "Mythology",
+          type: "multiple",
+          difficulty: "medium",
+          question: "Hera is god of...",
+          correct_answer: "Marriage",
+          incorrect_answers: ["Agriculture", "Sea", "War"],
+          userGuess: "Sea"
+        }]
+        const actionToDispatch = addTrivia(trivia)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+        mappedProps.loadTriviaToStore(trivia)
+        expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+      })
 
-      const expected = {}
-      const result = mapStateToProps(mockState)
-      expect(result).toEqual(expected)
-    })
-  })
+      it('should call dispatch with the guest action when loadUserToStore is called', () => {
+        const mockDispatch = jest.fn();
+        const user = {
+          name: 'Jessica Rabbit',
+          team: '19',
+          level: 'hard'
+        }
+        const actionToDispatch = addUser(user)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+        mappedProps.loadUserToStore(user)
+        expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+      })
 
-  describe('mapDispatchToProps', () => {
-    it('should call dispatch with the loadMovies action when loadMoviesToStore is called', () => {
-      const mockDispatch = jest.fn();
-      const movies = []
-      const actionToDispatch = loadMovies(movies)
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.loadMoviesToStore(movies)
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
 })
