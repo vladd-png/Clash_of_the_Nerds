@@ -1,5 +1,5 @@
 import React from 'react';
-import Nerds from './Nerds';
+import { Nerds, mapStateToProps } from './Nerds';
 import { shallow } from 'enzyme';
 
 describe('Nerds', () => {
@@ -8,5 +8,5 @@ describe('Nerds', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
-  
+
 })
