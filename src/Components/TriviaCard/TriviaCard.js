@@ -20,7 +20,8 @@ class TriviaCard extends Component{
   }
   updateChoice = (event) => {
     if(event.target.value === this.props.trivia.correct_answer) {
-      this.props.loadCorrectGuessToStore(event.target.value)
+      let correctObj = {...this.props.trivia, userGuess: 'Correct!'}
+      this.props.loadCorrectGuessToStore(correctObj)
     } else {
       let errorObject = {...this.props.trivia, userGuess: event.target.value}
       this.props.loadIncorrectGuessToStore(errorObject)
