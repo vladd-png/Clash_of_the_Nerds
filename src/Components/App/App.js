@@ -7,8 +7,9 @@ import LoadingPage from '../LoadingPage/LoadingPage';
 import Nav from '../Nav/Nav';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch } from 'react-router-dom';
-import { addTrivia, addUser } from '../../actions';
+import { addTrivia, addUser, clearStore } from '../../actions';
 import { connect } from 'react-redux';
+
 
 class App extends Component{
   constructor() {

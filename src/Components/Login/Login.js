@@ -12,6 +12,10 @@ class Login extends Component {
       level: 'easy'
     }
   }
+  componentDidMount = () => {
+    this.setState({ name: '', team: '20', level: 'easy' })
+    this.props.addUser({ name: this.state.name, team: this.state.team, level: this.state.level })
+  }
   handleChange = (event) => {
     this.setState({ name: event.target.value })
   }
