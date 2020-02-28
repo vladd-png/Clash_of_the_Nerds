@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
+import logo from '../../assets/logo.png';
 
 class Login extends Component {
   constructor() {
@@ -22,9 +23,9 @@ class Login extends Component {
   render() {
     return(
       <form className='login-form'>
-        <h1 className='title-logo'>Clash of the Nerds</h1>
+        <img src={ logo } className='title-logo' alt='clash of the nerds logo' />
         <input className='user-name' placeholder='name' type='text' value={this.state.name} onChange={this.handleChange} maxLength='25'/>
-        <h3>Choose Your Team</h3>
+        <h3>Choose Your Battle</h3>
         <select className='form-choice' onChange={(event) => this.setState({team: event.target.value})}>
           <option value='20'>Mythology</option>
           <option value='17'>Science & Nature</option>
