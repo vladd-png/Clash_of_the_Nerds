@@ -10,7 +10,6 @@ import './TriviaResults.scss'
 // userGuess: "Perseus"
 
 const TriviaResults = (props) => {
-  console.log(props.result)
   return (
     <div className='results-card'>
       <h2>{props.result.question}</h2>
