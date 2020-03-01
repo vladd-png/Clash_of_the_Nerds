@@ -15,6 +15,7 @@ const TriviaResults = (props) => {
       <h2>{props.result.question}</h2>
       <h4>Your Answer: {props.result.userGuess}</h4>
       <h4>Correct Answer: {props.result.correct_answer}</h4>
+      <button type='button' onClick={null}>Save Card</button>
     </div>
   )
 }

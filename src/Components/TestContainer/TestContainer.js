@@ -5,9 +5,9 @@ import TriviaCard from '../TriviaCard/TriviaCard';
 import './TestContainer.scss';
 import { addTrivia } from '../../actions';
 import { connect } from 'react-redux';
-let i = 0;
 let currentQuestion, triviaData;
 let questions;
+let i = 0;
 
 class TestContainer extends Component {
   constructor() {
@@ -22,6 +22,7 @@ class TestContainer extends Component {
   }
   changeCard = (triviaData) => {
     if (i < 9 ) {
+      console.log('first', i);
       i++
       this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
     }
@@ -36,7 +37,7 @@ class TestContainer extends Component {
         let newQuestionObj = { ...question, question: question.question.replace('&amp;', '&') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&quot;')) {
-        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"') }
+        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&rsquo;s')) {
         let newQuestionObj = { ...question, question: question.question.replace('&rsquo;s', '\'s') }
@@ -61,10 +62,7 @@ class TestContainer extends Component {
          <article className='test-choice'>
           <div>{ i === 9 ?
             <section>
-              <h1>{triviaData}</h1>
-              <Link to='/results'>
-                <button className='results-route' type='button'>See Results</button>
-              </Link>
+              <Link to='/results'><h1>{triviaData}</h1></Link>
             </section>
             : <h1>{triviaData}</h1> }</div>
          </article>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TriviaResults from '../TriviaResults/TriviaResults';
 import './Results.scss';
 
-const Results = (props) => {
+export const Results = (props) => {
   const allWrong = props.incorrectGuess.map(guess => {
     return <TriviaResults result={guess} />
   })
@@ -14,7 +14,6 @@ const Results = (props) => {
       return 'You Need To Study'
     }
   })
-  console.log(props);
   const totalScore = (10 - props.correctGuess.length)
   const percentCorrect = ((props.correctGuess.length / 10) * 100)
   return (
