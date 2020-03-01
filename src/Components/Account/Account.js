@@ -1,15 +1,18 @@
 import React from 'react';
 import './Account.scss';
+import { connect } from 'react-redux';
 
-const Account = () => {
+
+export const Account = (props) => {
   return (
-    null
+    <section className='account-page'>
+      <h1 className='account-name'>{props.user[0].name}'s Account Page</h1>
+    </section>
   )
 }
 
-export default Account;
-
 export const mapStateToProps = state => ({
-  user: state.user,
-  savedTrivia: state.savedTrivia
+  user: state.user
 });
+
+export default connect(mapStateToProps)(Account)

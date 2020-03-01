@@ -56,7 +56,13 @@ export class App extends Component{
               {this.props.trivia.trivia.length && <section><Nav resetWindow={this.resetWindow}/><TestContainer trivia={this.props.trivia} /></section>}
             </section>
           )}} />
-        <Route exact path='/account' component={Account} />
+        <Route exact path='/account' render={() => {
+          return (
+            <section>
+              <Nav />
+              <Account />
+            </section>
+          )}} />
         <Route exact path='/results' render={() => {
           return (
             <section>
