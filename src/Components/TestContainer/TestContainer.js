@@ -25,12 +25,6 @@ class TestContainer extends Component {
       console.log('first', i);
       i++
       this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
-      // return triviaData = <TriviaCard trivia={questions[i]} changeCard={this.changeCard} />
-    } else {
-      console.log('second', i);
-      return null
-      // i = 9;
-      // return i
     }
   }
   formatQuestion = () => {
@@ -43,7 +37,7 @@ class TestContainer extends Component {
         let newQuestionObj = { ...question, question: question.question.replace('&amp;', '&') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&quot;')) {
-        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"') }
+        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&rsquo;s')) {
         let newQuestionObj = { ...question, question: question.question.replace('&rsquo;s', '\'s') }

@@ -1,7 +1,6 @@
 import { triviaReducer } from './trivia';
 import { correctGuessReducer } from './correctGuess';
 import { incorrectGuessReducer } from './incorrectGuess';
-import { resetAnswersStore } from './reset';
 import { userReducer } from './user';
 import { combineReducers } from 'redux';
 
