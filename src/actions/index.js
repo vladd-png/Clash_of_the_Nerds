@@ -21,3 +21,8 @@ export const addIncorrectGuess = (guess) => ({
 export const resetAnswers = () => ({
   type: 'RESET_STORE_ANSWERS'
 })
+
+export const saveUsersTrivia = (trivia) => ({
+  type: 'SAVE_TRIVIA',
+  trivia
+})
