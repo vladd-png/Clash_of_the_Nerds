@@ -6,8 +6,6 @@ import small from '../../assets/logo-small.png';
 import { resetAnswers } from '../../actions';
 import spartan from '../../assets/spartan-icon.png';
 
-
-
 export const Nav = (props) => {
   const updateStoreAnswers = () => {
     props.loadIncorrectGuessToStore()
