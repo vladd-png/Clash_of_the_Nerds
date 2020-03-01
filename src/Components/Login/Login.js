@@ -26,15 +26,15 @@ export class Login extends Component {
     this.setState({ name: '' })
   }
   onSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     this.setState({ formCompleted: true })
   }
   render() {
     return(
       <form className='login-form' onSubmit={this.onSubmit}>
-        {this.state.formCompleted && <Redirect to={{pathname: '/test'}} /> }
+        {this.state.formCompleted && <Redirect to={{ pathname: '/test' }} /> }
         <img src={ logo } className='title-logo' alt='clash of the nerds logo' />
-        <input required className='user-name' placeholder='name' type='text' value={this.state.name} onChange={this.handleChange} maxLength='25'/>
+        <input className='user-name' placeholder='name' type='text' value={this.state.name} onChange={this.handleChange} maxLength='25'/>
         <h3>Choose Your Battle</h3>
         <select className='form-choice' onChange={(event) => this.setState({team: event.target.value})}>
           <option value='20'>Mythology</option>
