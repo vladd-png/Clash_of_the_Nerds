@@ -18,7 +18,7 @@ export const Nav = (props) => {
         <h1 className='user-name-nav'>Welcome {props.user[0].name}</h1>
       </div></Link>
       <img src={ small } className='small-title-logo' alt='clash of the nerds logo but small' />
-      <Link to='/'><button type='button' className='home-btn' onClick={updateStoreAnswers}>Quit</button></Link>
+      <Link to='/'><button type='button' className='home-btn' onClick={updateStoreAnswers}>Quit to Home</button></Link>
     </section>
   )
 }
