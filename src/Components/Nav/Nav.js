@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import small from '../../assets/logo-small.png';
 import { resetAnswers } from '../../actions';
-
-
+import spartan from '../../assets/spartan-icon.png';
 
 export const Nav = (props) => {
   const updateStoreAnswers = () => {
@@ -14,9 +13,12 @@ export const Nav = (props) => {
 
   return (
     <section className='nav-bar'>
-      <h1 className='user-name-nav'>Welcome {props.user[0].name}</h1>
+      <Link to='/account'><div className='user-info'>
+        <img src={ spartan } className='user-icon' alt='small spartan man for user account access' />
+        <h1 className='user-name-nav'>Welcome {props.user[0].name}</h1>
+      </div></Link>
       <img src={ small } className='small-title-logo' alt='clash of the nerds logo but small' />
-      <Link to='/'><button type='button' className='home-btn' onClick={updateStoreAnswers}>Quit</button></Link>
+      <Link to='/'><button type='button' className='home-btn' onClick={updateStoreAnswers}>Quit to Home</button></Link>
     </section>
   )
 }

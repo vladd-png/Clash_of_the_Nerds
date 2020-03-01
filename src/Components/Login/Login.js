@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Login.scss';
 import logo from '../../assets/logo.png';
 
@@ -9,7 +9,8 @@ export class Login extends Component {
     this.state = {
       name: '',
       team: '20',
-      level: 'easy'
+      level: 'easy',
+      formCompleted: false
     }
   }
   componentDidMount = () => {
@@ -24,9 +25,14 @@ export class Login extends Component {
     this.props.fetchData( this.state.team, this.state.level )
     this.setState({ name: '' })
   }
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.setState({ formCompleted: true })
+  }
   render() {
     return(
-      <form className='login-form'>
+      <form className='login-form' onSubmit={this.onSubmit}>
+        {this.state.formCompleted && <Redirect to={{ pathname: '/test' }} /> }
         <img src={ logo } className='title-logo' alt='clash of the nerds logo' />
         <input className='user-name' placeholder='name' type='text' value={this.state.name} onChange={this.handleChange} maxLength='25'/>
         <h3>Choose Your Battle</h3>
@@ -42,7 +48,7 @@ export class Login extends Component {
           <option value='medium'>Medium</option>
           <option value='hard'>Hard</option>
         </select>
-        <Link to={`/test`}><button type='button' className='submit-btn' onClick={this.submitInfo}>Ready to Rumble</button></Link>
+        <button type='submit' className='submit-btn' onClick={this.submitInfo}>Ready to Rumble</button>
       </form>
     )
   }

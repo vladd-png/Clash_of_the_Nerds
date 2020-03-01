@@ -5,6 +5,7 @@ import Nerds from '../Nerds/Nerds';
 import Results from '../Results/Results.js';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import Nav from '../Nav/Nav';
+import Account from '../Account/Account';
 import TestContainer from '../TestContainer/TestContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { addTrivia, addUser, clearStore } from '../../actions';
@@ -53,6 +54,13 @@ export class App extends Component{
             <section className='trivia-board'>
               {!this.props.trivia.trivia.length && <LoadingPage />}
               {this.props.trivia.trivia.length && <section><Nav resetWindow={this.resetWindow}/><TestContainer trivia={this.props.trivia} /></section>}
+            </section>
+          )}} />
+        <Route exact path='/account' render={() => {
+          return (
+            <section>
+              <Nav />
+              <Account />
             </section>
           )}} />
         <Route exact path='/results' render={() => {

@@ -13,7 +13,7 @@
   color: #FFF;
   font-size: 25px;
   float: left;
-  margin-left: 50px;
+  text-decoration: none;
 }
 
 .home-btn {
@@ -21,11 +21,23 @@
   height: 35px;
   font-size: 20px;
   margin-right: 50px;
-  width: 100px;
+  width: 150px;
   color: #662324;
   border-radius: 5px;
 }
 
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
 .small-title-logo {
   height: 100px;
+}
+
+.user-icon {
+  height: 60px;
+  margin-left: 30px;
 }
