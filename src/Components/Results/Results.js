@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TriviaResults from '../TriviaResults/TriviaResults';
 import './Results.scss';
+import PropTypes from 'prop-types';
 
 export const Results = (props) => {
   const allWrong = props.incorrectGuess.map(guess => {
@@ -34,6 +35,11 @@ export const Results = (props) => {
       </div>
     </section>
   )
+}
+
+Results.propTypes = {
+  correctGuess: PropTypes.array,
+  incorrectGuess: PropTypes.array
 }
 
 export const mapStateToProps = state => ({

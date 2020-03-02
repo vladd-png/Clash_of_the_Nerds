@@ -2,7 +2,7 @@ import React from 'react';
 import './Account.scss';
 import { connect } from 'react-redux';
 import AccountResults from '../AccountResults/AccountResults'
-
+import PropTypes from 'prop-types';
 
 export const Account = (props) => {
 
@@ -13,6 +13,10 @@ export const Account = (props) => {
       <div>{triviaCards}</div>
     </section>
   )
+}
+
+Account.propTypes = {
+  saveTrivia: PropTypes.array
 }
 
 export const mapStateToProps = state => ({

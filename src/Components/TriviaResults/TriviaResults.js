@@ -2,6 +2,7 @@ import React from 'react';
 import './TriviaResults.scss';
 import { saveUsersTrivia } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const TriviaResults = (props) => {
   const updateStoreAnswers = () => {
@@ -15,6 +16,10 @@ export const TriviaResults = (props) => {
       <button type='button' onClick={updateStoreAnswers}>Save Card</button>
     </div>
   )
+}
+
+TriviaResults.propTypes = {
+  result: PropTypes.array
 }
 
 export const mapDispatchToProps = dispatch => ({
