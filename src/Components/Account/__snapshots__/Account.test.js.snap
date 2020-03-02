@@ -7,7 +7,6 @@ exports[`Account should match snapshot 1`] = `
   <h1
     className="account-name"
   >
-    Jessica Rabbit
     's Account Page
   </h1>
   <div>

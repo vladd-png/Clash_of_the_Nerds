@@ -16,9 +16,9 @@ describe('Account', () => {
         incorrect_answers: ['War', 'Sun', 'Fire']
       }]}
       user={[{
-        name: 'Jessica Rabbit',
-        team: '19',
-        level: 'hard'
+        name: '',
+        team: '20',
+        level: 'easy'
       }]}
     />)
 
