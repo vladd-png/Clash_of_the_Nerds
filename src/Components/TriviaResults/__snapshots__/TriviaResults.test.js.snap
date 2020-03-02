@@ -12,6 +12,7 @@ exports[`TriviaResults should match snapshot 1`] = `
     Correct Answer: 
   </h4>
   <button
+    className="results-btn"
     onClick={[Function]}
     type="button"
   >

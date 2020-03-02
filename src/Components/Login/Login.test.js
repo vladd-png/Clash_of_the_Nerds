@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { addUser } from '../../actions';
 
 describe('Login', () => {
-  let wrapper, mockUser, mockFetch, mockFetchData, mockAddUser;
+  let wrapper, mockUser, mockFetchData, mockAddUser;
 
   beforeEach(() => {
     mockUser = {

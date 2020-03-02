@@ -7,7 +7,7 @@ describe('fetchData', () => {
     difficulty: "easy",
     question: "Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?",
     correct_answer: "Orpheus",
-    incorrect_answers: (3) ["Hercules", "Perseus", "Daedalus"],
+    incorrect_answers:["Hercules", "Perseus", "Daedalus"],
     userGuess: "Perseus"
   }];
   let mockTeam;

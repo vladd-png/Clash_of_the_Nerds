@@ -8,8 +8,8 @@ import Nav from '../Nav/Nav';
 import Account from '../Account/Account';
 import TestContainer from '../TestContainer/TestContainer';
 import BadPathPage from '../BadPathPage/BadPathPage';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { addTrivia, addUser, clearStore } from '../../actions';
+import { Route, Switch } from 'react-router-dom';
+import { addTrivia, addUser } from '../../actions';
 import { connect } from 'react-redux';
 import { getTrivia } from '../../apiCalls/apiCalls.js';
 

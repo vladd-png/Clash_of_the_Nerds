@@ -16,7 +16,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'easy',
       question: 'Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?',
       correct_answer: 'Orpheus',
-      incorrect_answers: (3) ['Hercules', 'Perseus', 'Daedalus'],
+      incorrect_answers:['Hercules', 'Perseus', 'Daedalus'],
       userGuess: 'Perseus'
     }
     const mockAction = {
@@ -29,7 +29,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'easy',
       question: 'Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?',
       correct_answer: 'Orpheus',
-      incorrect_answers: (3) ['Hercules', 'Perseus', 'Daedalus'],
+      incorrect_answers:['Hercules', 'Perseus', 'Daedalus'],
       userGuess: 'Perseus'
     }]
     const result = incorrectGuessReducer(mockState, mockAction)
@@ -43,7 +43,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'easy',
       question: 'Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?',
       correct_answer: 'Orpheus',
-      incorrect_answers: ['Hercules', 'Perseus', 'Daedalus'],
+      incorrect_answers:['Hercules', 'Perseus', 'Daedalus'],
       userGuess: 'Perseus'
     }]
     const guess = {
@@ -52,7 +52,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'medium',
       question: 'The Japanese god Izanagi successfully returned his wife Izanami from the Underworld.',
       correct_answer: 'False',
-      incorrect_answers: ['True']
+      incorrect_answers:['True']
     }
     const mockAction = {
       type: 'ADD_INCORRECT_GUESS',
@@ -64,7 +64,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'easy',
       question: 'Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?',
       correct_answer: 'Orpheus',
-      incorrect_answers: ['Hercules', 'Perseus', 'Daedalus'],
+      incorrect_answers:['Hercules', 'Perseus', 'Daedalus'],
       userGuess: 'Perseus'
     },{
       category: 'Mythology',
@@ -72,7 +72,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'medium',
       question: 'The Japanese god Izanagi successfully returned his wife Izanami from the Underworld.',
       correct_answer: 'False',
-      incorrect_answers: ['True']
+      incorrect_answers:['True']
     }]
     const result = incorrectGuessReducer(mockState, mockAction)
     expect(result).toEqual(expected)
@@ -85,7 +85,7 @@ describe('incorrectGuessReducer', () => {
       difficulty: 'easy',
       question: 'Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?',
       correct_answer: 'Orpheus',
-      incorrect_answers: (3) ['Hercules', 'Perseus', 'Daedalus'],
+      incorrect_answers:['Hercules', 'Perseus', 'Daedalus'],
       userGuess: 'Perseus'
     }]
     const mockAction = {
