@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Results from '../Results/Results.js';
 import TriviaCard from '../TriviaCard/TriviaCard';
 import './TestContainer.scss';
 import { addTrivia } from '../../actions';
 import { connect } from 'react-redux';
-let currentQuestion, triviaData;
+let triviaData;
 let questions;
 let i = 0;
 
@@ -55,19 +54,20 @@ export class TestContainer extends Component {
           <h1 className='trivia-category'>{questions[i].category}</h1>
           <h2 className='trivia-difficulty'>Difficulty: {questions[i].difficulty}</h2>
           <article className='test-question'>
-          <h1 className='trivia-header'>Question: {i + 1} out of 10</h1>
-          <h1 className='trivia-question'>{questions[i].question}</h1>
-         </article>
-         <article className='test-choice'>
-          <div>{ i === 9 ?
-            <section>
-              <Link to='/results'><h1>{triviaData}</h1></Link>
-            </section>
-            : <h1>{triviaData}</h1> }</div>
-         </article>
-         <article className='test-progress'>
-          <h1></h1>
-         </article>
+            <h1 className='trivia-header'>Question: {i + 1} out of 10</h1>
+            <h1 className='trivia-question'>{questions[i].question}</h1>
+          </article>
+          <article className='test-choice'>
+            <div>{ i === 9 ?
+              <section>
+                <Link to='/results'><h1>{triviaData}</h1></Link>
+              </section>
+              : <h1>{triviaData}</h1> }
+            </div>
+          </article>
+          <article className='test-progress'>
+            <h1></h1>
+          </article>
        </section>
      )
    }
