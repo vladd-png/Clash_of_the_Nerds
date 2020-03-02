@@ -27,7 +27,7 @@ export class Login extends Component {
     this.setState({ name: '' })
   }
   onSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({ formCompleted: true })
   }
   render() {
@@ -37,14 +37,14 @@ export class Login extends Component {
         <img src={ logo } className='title-logo' alt='clash of the nerds logo' />
         <input className='user-name' placeholder='name' type='text' value={this.state.name} onChange={this.handleChange} maxLength='25'/>
         <h3>Choose Your Battle</h3>
-        <select className='form-choice' onChange={(event) => this.setState({team: event.target.value})}>
+        <select className='form-choice' id='first-choice' onChange={(event) => this.setState({team: event.target.value})}>
           <option value='20'>Mythology</option>
           <option value='17'>Science & Nature</option>
           <option value='9'>General Knowledge</option>
           <option value='27'>Animals</option>
           <option value='19'>Mathematics</option>
         </select>
-        <select className='form-choice' onChange={(event) => this.setState({level: event.target.value})}>
+        <select className='form-choice' id='second-choice' onChange={(event) => this.setState({level: event.target.value})}>
           <option value='easy'>Easy</option>
           <option value='medium'>Medium</option>
           <option value='hard'>Hard</option>
