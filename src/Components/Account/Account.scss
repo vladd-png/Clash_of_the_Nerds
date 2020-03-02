@@ -1,9 +1,16 @@
 .account-page {
   display: flex;
   flex-direction: column;
-  background-color:  #662324;
+  width: 100%;
+  height: 100vh;
+}
+
+.account-name {
+  margin-top: 50px;
   width: 70%;
-  margin: 100px;
   margin-left: 15%;
+  background-color:  #662324;
   height: 50px;
+  color: #FFF;
+  font-size: 30px;
 }
