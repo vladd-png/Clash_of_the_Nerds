@@ -21,6 +21,7 @@ export class Login extends Component {
     this.setState({ name: event.target.value })
   }
   submitInfo = () => {
+    // this.setState({ formCompleted: true })
     this.props.addUser({ name: this.state.name, team: this.state.team, level: this.state.level })
     this.props.fetchData( this.state.team, this.state.level )
     this.setState({ name: '' })

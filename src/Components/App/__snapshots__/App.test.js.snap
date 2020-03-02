@@ -17,9 +17,15 @@ exports[`App fetchData should match snapshot 1`] = `
     />
     <Route
       exact={true}
+      path="/account"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
       path="/results"
       render={[Function]}
     />
+    <BadPathPage />
   </Switch>
 </div>
 `;

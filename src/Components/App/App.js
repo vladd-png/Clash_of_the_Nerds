@@ -7,6 +7,7 @@ import LoadingPage from '../LoadingPage/LoadingPage';
 import Nav from '../Nav/Nav';
 import Account from '../Account/Account';
 import TestContainer from '../TestContainer/TestContainer';
+import BadPathPage from '../BadPathPage/BadPathPage';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { addTrivia, addUser, clearStore } from '../../actions';
 import { connect } from 'react-redux';
@@ -51,14 +52,14 @@ export class App extends Component{
           )}}/>
         <Route exact path='/test' render={() => {
           return (
-            <section className='trivia-board'>
+            <section>
               {!this.props.trivia.trivia.length && <LoadingPage />}
               {this.props.trivia.trivia.length && <section><Nav resetWindow={this.resetWindow}/><TestContainer trivia={this.props.trivia} /></section>}
             </section>
           )}} />
         <Route exact path='/account' render={() => {
           return (
-            <section>
+            <section className='account-page'>
               <Nav />
               <Account />
             </section>
@@ -71,6 +72,7 @@ export class App extends Component{
               <Nerds />
             </section>
           )}} />
+        <BadPathPage />
       </Switch>
       </div>
     );

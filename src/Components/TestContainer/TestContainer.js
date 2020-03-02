@@ -9,7 +9,7 @@ let currentQuestion, triviaData;
 let questions;
 let i = 0;
 
-class TestContainer extends Component {
+export class TestContainer extends Component {
   constructor() {
     super()
     this.state={
