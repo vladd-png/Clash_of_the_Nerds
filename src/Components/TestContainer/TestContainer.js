@@ -22,7 +22,6 @@ export class TestContainer extends Component {
   }
   changeCard = (triviaData) => {
     if (i < 9 ) {
-      console.log('first', i);
       i++
       this.setState({ chosenAnswer: [...this.state.currentQuestion, triviaData] })
     }
@@ -37,7 +36,7 @@ export class TestContainer extends Component {
         let newQuestionObj = { ...question, question: question.question.replace('&amp;', '&') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&quot;')) {
-        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"').replace('&quot;', '\"') }
+        let newQuestionObj = { ...question, question: question.question.replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"') }
         questions.push(newQuestionObj)
       } else if (question.question.includes('&rsquo;s')) {
         let newQuestionObj = { ...question, question: question.question.replace('&rsquo;s', '\'s') }
