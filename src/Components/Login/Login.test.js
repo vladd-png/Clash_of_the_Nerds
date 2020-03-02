@@ -3,8 +3,6 @@ import { Login } from './Login';
 import { shallow } from 'enzyme';
 import { addUser } from '../../actions';
 
-
-
 describe('Login', () => {
   let wrapper, mockUser, mockFetch, mockFetchData, mockAddUser;
 
