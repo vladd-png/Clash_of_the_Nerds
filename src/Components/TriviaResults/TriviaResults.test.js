@@ -2,11 +2,14 @@ import React from 'react';
 import { TriviaResults, mapDispatchToProps } from './TriviaResults';
 import { shallow } from 'enzyme';
 import { saveUsersTrivia } from '../../actions';
+import { mockRandom } from 'jest-mock-random';
+
 
 describe('TriviaResults', () => {
   let wrapper;
 
   beforeEach(() => {
+    mockRandom([0.1]);
     wrapper = shallow(<TriviaResults
       result={[{
         category: 'Mythology',
