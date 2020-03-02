@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Nav, mapStateToProps } from './Nav';
+import { Nav, mapStateToProps, mapDispatchToProps } from './Nav';
+import { resetAnswers } from '../../actions';
+
 
 describe('Nav', () => {
   let wrapper, mockUser;
@@ -38,6 +40,14 @@ describe('Nav', () => {
     }
     const result = mapStateToProps(mockState)
     expect(result).toEqual(expected)
+  })
+
+  it('should call dispatch when loadIncorrectGuessToStore is called', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = resetAnswers()
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.loadIncorrectGuessToStore()
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
 
 })

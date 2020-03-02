@@ -4,12 +4,25 @@ exports[`Nav should match snapshot 1`] = `
 <section
   className="nav-bar"
 >
-  <h1
-    className="user-name-nav"
+  <Link
+    to="/account"
   >
-    Welcome 
-    Jessica Rabbit
-  </h1>
+    <div
+      className="user-info"
+    >
+      <img
+        alt="small spartan man for user account access"
+        className="user-icon"
+        src="spartan-icon.png"
+      />
+      <h1
+        className="user-name-nav"
+      >
+        Welcome 
+        Jessica Rabbit
+      </h1>
+    </div>
+  </Link>
   <img
     alt="clash of the nerds logo but small"
     className="small-title-logo"
@@ -20,9 +33,10 @@ exports[`Nav should match snapshot 1`] = `
   >
     <button
       className="home-btn"
+      onClick={[Function]}
       type="button"
     >
-      Quit
+      Quit to Home
     </button>
   </Link>
 </section>
