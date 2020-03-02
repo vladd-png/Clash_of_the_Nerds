@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TriviaResults from '../TriviaResults/TriviaResults';
 import './Results.scss';
+import PropTypes from 'prop-types';
 
 export const Results = (props) => {
   const allWrong = props.incorrectGuess.map(guess => {
-    return <TriviaResults result={guess} />
+    return <TriviaResults key={Math.random()} result={guess} />
   })
   const allCorrect = props.correctGuess.map(guess => {
     if (props.correctGuess.length !== 0) {
-      return <TriviaResults result={guess} />
+      return <TriviaResults key={Math.random()} result={guess} />
     } else {
       return 'You Need To Study'
     }
@@ -34,6 +35,11 @@ export const Results = (props) => {
       </div>
     </section>
   )
+}
+
+Results.propTypes = {
+  correctGuess: PropTypes.array,
+  incorrectGuess: PropTypes.array
 }
 
 export const mapStateToProps = state => ({

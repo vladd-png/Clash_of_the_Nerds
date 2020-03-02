@@ -1,12 +1,10 @@
 import React from 'react';
-import { Login, mapStateToProps, mapDispatchToProps } from './Login';
+import { Login } from './Login';
 import { shallow } from 'enzyme';
 import { addUser } from '../../actions';
 
-
-
 describe('Login', () => {
-  let wrapper, mockUser, mockFetch;
+  let wrapper, mockUser, mockFetch, mockFetchData, mockAddUser;
 
   beforeEach(() => {
     mockUser = {
@@ -14,9 +12,11 @@ describe('Login', () => {
       team: '19',
       level: 'hard'
     }
+    mockFetchData = jest.fn().mockImplementation()
+    mockAddUser = jest.fn().mockImplementation()
     wrapper = shallow(<Login
-      fetchData={jest.fn()}
-      addUser={jest.fn()}
+      fetchData={mockFetchData}
+      addUser={mockAddUser}
     />)
   })
 
@@ -41,24 +41,36 @@ describe('Login', () => {
     expect(wrapper.state('name')).toEqual(expected)
   })
 
-  // it('should call addUser and fetchData when submitInfo is called', () => {
-  //   let mockBattleTeam = '19'
-  //   let mockBattleLevel = 'hard'
-  //   wrapper.instance().submitInfo()
-  //   // expect(wrapper.addUser).toHaveBeenCalledWith(mockUser)
-  //   expect(wrapper.instance().fetchData).toHaveBeenCalledWith(mockBattleTeam, mockBattleLevel)
-  // })
-
-  it('should set state when submitInfo is called', () => {
+  it('should set state to clear when submitInfo is called', () => {
     wrapper.setState(mockUser)
     wrapper.instance().submitInfo()
     expect(wrapper.state('name')).toEqual('')
   })
 
-})
+  it('should call addUser and fetchData when submitInfo is called', () => {
+    let expected = {
+      name: '',
+      team: '20',
+      level: 'easy'
+    }
+    let mockLevel = '19'
+    let mockTeam = 'hard'
+    wrapper.setState(mockUser)
+    wrapper.instance().submitInfo()
+    expect(mockAddUser).toHaveBeenCalledWith(expected)
+    expect(mockFetchData).toHaveBeenCalledWith(mockLevel, mockTeam)
+  })
 
-// const mockDispatch = jest.fn()
-// const actionToDispatch = addUser(mockUser)
-// const mappedProps = mapDispatchToProps(mockDispatch)
-// mappedProps.loadUserToStore(mockUser)
-// expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+  it('should setstate when the user selects something from the first dropdown', () => {
+    let expected = '20'
+    wrapper.find('#first-choice').simulate('click')
+    expect(wrapper.state('team')).toEqual(expected)
+  })
+
+  it('should setstate when the user selects something from the second dropdown', () => {
+    let expected = 'easy'
+    wrapper.find('#second-choice').simulate('click')
+    expect(wrapper.state('level')).toEqual(expected)
+  })
+
+})

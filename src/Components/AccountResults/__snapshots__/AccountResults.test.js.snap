@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountResults should match snapshot 1`] = `
+<div
+  className="accounts-card"
+>
+  <h2>
+    This Greek mythological figure is the god/goddess of battle strategy (among other things).
+  </h2>
+  <h4>
+    Your Answer: 
+    Athena
+  </h4>
+  <h4>
+    Correct Answer: 
+    Athena
+  </h4>
+</div>
+`;

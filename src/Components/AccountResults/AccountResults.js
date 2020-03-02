@@ -1,5 +1,6 @@
 import React from 'react';
 import './AccountResults.scss';
+import PropTypes from 'prop-types';
 
 export const AccountResults = (props) => {
   return (
@@ -9,6 +10,10 @@ export const AccountResults = (props) => {
       <h4>Correct Answer: {props.result.correct_answer}</h4>
     </div>
   )
+}
+
+AccountResults.propTypes = {
+  result: PropTypes.object
 }
 
 export default AccountResults

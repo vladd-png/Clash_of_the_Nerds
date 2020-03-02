@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TriviaCard.scss';
 import { connect } from 'react-redux';
 import { addIncorrectGuess, addCorrectGuess } from '../../actions';
+import PropTypes from 'prop-types';
 
 export class TriviaCard extends Component{
   constructor(props) {
@@ -32,6 +33,10 @@ export class TriviaCard extends Component{
       </div>
     )
   }
+}
+
+TriviaCard.propTypes = {
+  trivia: PropTypes.object
 }
 
 export const mapDispatchToProps = dispatch => ({

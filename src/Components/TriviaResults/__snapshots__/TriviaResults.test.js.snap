@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TriviaResults should match snapshot 1`] = `
+<div
+  className="results-card"
+>
+  <h2 />
+  <h4>
+    Your Answer: 
+  </h4>
+  <h4>
+    Correct Answer: 
+  </h4>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Save Card
+  </button>
+</div>
+`;

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TestContainer should match snapshot 1`] = `
+<section>
+  <h1
+    className="trivia-category"
+  >
+    Mythology
+  </h1>
+  <h2
+    className="trivia-difficulty"
+  >
+    Difficulty: 
+    easy
+  </h2>
+  <article
+    className="test-question"
+  >
+    <h1
+      className="trivia-header"
+    >
+      Question: 
+      1
+       out of 10
+    </h1>
+    <h1
+      className="trivia-question"
+    >
+      Loki dressed as a woman in norse mythology
+    </h1>
+  </article>
+  <article
+    className="test-choice"
+  >
+    <div>
+      <h1>
+        <Connect(TriviaCard)
+          changeCard={[Function]}
+          trivia={
+            Object {
+              "category": "Mythology",
+              "correct_answer": "true",
+              "difficulty": "easy",
+              "incorrect_answers": Array [
+                "false",
+              ],
+              "question": "Loki dressed as a woman in norse mythology",
+              "type": "true/false",
+              "userGuess": "true",
+            }
+          }
+        />
+      </h1>
+    </div>
+  </article>
+  <article
+    className="test-progress"
+  >
+    <h1 />
+  </article>
+</section>
+`;

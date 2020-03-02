@@ -1,8 +1,11 @@
 import React from 'react';
 import { Account, mapStateToProps } from './Account';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
+
 
 describe('Account', () => {
+  mockRandom([0.1]);
   let wrapper = shallow(<Account
       saveTrivia={[
         {category: 'Mythology',
@@ -13,9 +16,9 @@ describe('Account', () => {
         incorrect_answers: ['War', 'Sun', 'Fire']
       }]}
       user={[{
-        name: 'Jessica Rabbit',
-        team: '19',
-        level: 'hard'
+        name: '',
+        team: '20',
+        level: 'easy'
       }]}
     />)
 

@@ -7,11 +7,11 @@ exports[`Account should match snapshot 1`] = `
   <h1
     className="account-name"
   >
-    Jessica Rabbit
     's Account Page
   </h1>
   <div>
-    <Connect(TriviaResults)
+    <AccountResults
+      key="0.1"
       result={
         Object {
           "category": "Mythology",

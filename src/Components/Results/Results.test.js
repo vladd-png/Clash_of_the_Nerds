@@ -1,11 +1,14 @@
 import React from 'react';
-import Results from './Results';
+import { Results } from './Results';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
+
 
 describe('Results', () => {
   let wrapper;
 
   beforeEach(() => {
+    mockRandom([0.1]);
     wrapper = shallow(<Results
       incorrectGuess={[
         {
@@ -43,9 +46,5 @@ describe('Results', () => {
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
-  })
-
-  it('should', () => {
-
   })
 })

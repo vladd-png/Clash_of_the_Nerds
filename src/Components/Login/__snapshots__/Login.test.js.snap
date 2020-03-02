@@ -23,6 +23,7 @@ exports[`Login should match snapshot 1`] = `
   </h3>
   <select
     className="form-choice"
+    id="first-choice"
     onChange={[Function]}
   >
     <option
@@ -53,6 +54,7 @@ exports[`Login should match snapshot 1`] = `
   </select>
   <select
     className="form-choice"
+    id="second-choice"
     onChange={[Function]}
   >
     <option

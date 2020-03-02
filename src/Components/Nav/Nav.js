@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import small from '../../assets/logo-small.png';
 import { resetAnswers } from '../../actions';
 import spartan from '../../assets/spartan-icon.png';
+import PropTypes from 'prop-types';
 
 export const Nav = (props) => {
   const updateStoreAnswers = () => {
@@ -21,6 +22,10 @@ export const Nav = (props) => {
       <Link to='/'><button type='button' className='home-btn' onClick={updateStoreAnswers}>Quit to Home</button></Link>
     </section>
   )
+}
+
+Nav.propTypes = {
+  user: PropTypes.array
 }
 
 export const mapStateToProps = state => ({
