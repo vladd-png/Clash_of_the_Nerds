@@ -4,7 +4,7 @@ Need to study for that upcoming test? Is it geography, mathematics, or general k
 
 ### Introduction
 
-This was the final solo project in the third Module at Turing school. We were tasked with choosing our own API from a list of over 200 free and public sources, come up with an app purpose, and a target audience. This application serves to teach students who need to study for a specific test, in a game like setting. I was given five days to build the app from a `react-app` boilerplate. A major learning goal for this project was to set up the application with components connected to the Redux global store, complete with multiple uses of mapStateToProps and mapDispatchToProps.
+This was the final solo project in the third Module at Turing school. We were tasked with choosing our own API from a list of over 200 free and public sources, come up with an app purpose, and a target audience. This application serves to teach students who need to study for a specific test, in a game like setting. I was given five days to build the app from a `react-app` boilerplate. A major learning goal for this project was to set up the application with components connected to the Redux global store, complete with multiple uses of mapStateToProps and mapDispatchToProps.<br />
 [Link to wireframe](https://balsamiq.cloud/svd6gho/pl1x5h9/rDBB0)
 
 ### Screenshots
