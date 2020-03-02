@@ -22,8 +22,12 @@ export class TriviaCard extends Component{
     this.setState({ choice: event.target.value })
     this.props.changeCard(this.props.trivia)
   }
+  shuffle = (allAnswers) => {
+    allAnswers.sort(() => Math.random() - 0.5);
+  }
   render() {
     let allAnswers = this.props.trivia.incorrect_answers.concat(this.props.trivia.correct_answer)
+    this.shuffle(allAnswers)
     let formattedAnswers = allAnswers.map(answer => {
       return <button type='button' className='trivia-choice' value={answer} key={Math.random()} onClick={this.updateChoice}>{answer}</button>
     })

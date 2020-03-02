@@ -52,26 +52,32 @@ describe('TriviaCard', () => {
     expect(loadCorrectGuessToStoreMock).toHaveBeenCalledWith(mockResponse)
   })
 
+  it('should shuffle answers in array before displaying them to user', () => {
+    let mockAnswers = ['Ares', 'Artemis', 'Apollo', 'Athena']
+    wrapper.instance().shuffle(mockAnswers)
+    let expected = ['Athena', 'Apollo', 'Artemis', 'Ares']
+    expect(mockAnswers).toEqual(expected);
+  })
 
-    it('should update incorrect trivia question when updateChoice is called', () => {
-      let mockEvent = {
-        target: {
-          name: 'title',
-          value: 'Apollo'
-        }
+  it('should update incorrect trivia question when updateChoice is called', () => {
+    let mockEvent = {
+      target: {
+        name: 'title',
+        value: 'Apollo'
       }
-      let mockResponse = {
-        category: 'Mythology',
-        type: 'multiple',
-        difficulty: 'medium',
-        question: 'This Greek mythological figure is the god/goddess of battle strategy (among other things).',
-        correct_answer: 'Athena',
-        incorrect_answers: ['Ares','Artemis','Apollo'],
-        userGuess: 'Apollo'
-      }
-      wrapper.instance().updateChoice(mockEvent)
-      expect(loadIncorrectGuessToStoreMock).toHaveBeenCalledWith(mockResponse)
-    })
+    }
+    let mockResponse = {
+      category: 'Mythology',
+      type: 'multiple',
+      difficulty: 'medium',
+      question: 'This Greek mythological figure is the god/goddess of battle strategy (among other things).',
+      correct_answer: 'Athena',
+      incorrect_answers: ['Ares','Artemis','Apollo'],
+      userGuess: 'Apollo'
+    }
+    wrapper.instance().updateChoice(mockEvent)
+    expect(loadIncorrectGuessToStoreMock).toHaveBeenCalledWith(mockResponse)
+  })
 
   it('should call dispatch with the addCorrectGuess action when loadCorrectGuessToStore is called', () => {
     const mockDispatch = jest.fn();
