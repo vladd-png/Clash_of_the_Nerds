@@ -18,7 +18,7 @@ export const Results = (props) => {
   const totalScore = (10 - props.correctGuess.length)
   const percentCorrect = ((props.correctGuess.length / 10) * 100)
   return (
-    <section id='all-results'>
+    <section>
       <div className='total-results'>
         <h1>You Scored {percentCorrect} % Correct</h1>
       </div>

@@ -66,7 +66,7 @@ export class App extends Component{
           )}} />
         <Route exact path='/results' render={() => {
           return (
-            <section>
+            <section id='all-results'>
               <Nav />
               <Results />
               <Nerds />
