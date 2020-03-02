@@ -3,17 +3,9 @@ import './TriviaResults.scss';
 import { saveUsersTrivia } from '../../actions';
 import { connect } from 'react-redux';
 
-// category: "Mythology"
-// type: "multiple"
-// difficulty: "easy"
-// question: "Which figure from Greek mythology traveled to the underworld to return his wife Eurydice to the land of the living?"
-// correct_answer: "Orpheus"
-// incorrect_answers: (3) ["Hercules", "Perseus", "Daedalus"]
-// userGuess: "Perseus"
-
 export const TriviaResults = (props) => {
   const updateStoreAnswers = () => {
-    props.saveTrivia(props.result)
+    props.saveUsersTrivia(props.result)
   }
   return (
     <div className='results-card'>
@@ -26,7 +18,7 @@ export const TriviaResults = (props) => {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  saveTrivia: (trivia) => { dispatch(saveUsersTrivia(trivia)) },
+  saveUsersTrivia: (trivia) => { dispatch(saveUsersTrivia(trivia)) },
 })
 
 export default connect(null, mapDispatchToProps)(TriviaResults)
