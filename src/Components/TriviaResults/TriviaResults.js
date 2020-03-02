@@ -3,8 +3,6 @@ import './TriviaResults.scss';
 import { saveUsersTrivia } from '../../actions';
 import { connect } from 'react-redux';
 
-
-
 // category: "Mythology"
 // type: "multiple"
 // difficulty: "easy"
@@ -26,7 +24,6 @@ export const TriviaResults = (props) => {
     </div>
   )
 }
-
 
 export const mapDispatchToProps = dispatch => ({
   saveTrivia: (trivia) => { dispatch(saveUsersTrivia(trivia)) },

@@ -56,7 +56,7 @@ export class TestContainer extends Component {
           <h1 className='trivia-category'>{questions[i].category}</h1>
           <h2 className='trivia-difficulty'>Difficulty: {questions[i].difficulty}</h2>
           <article className='test-question'>
-          <h1 className='trivia-header'>Question: {i + 1}</h1>
+          <h1 className='trivia-header'>Question: {i + 1} out of 10</h1>
           <h1 className='trivia-question'>{questions[i].question}</h1>
          </article>
          <article className='test-choice'>
