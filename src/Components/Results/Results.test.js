@@ -47,8 +47,4 @@ describe('Results', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
-
-  it('should', () => {
-
-  })
 })
