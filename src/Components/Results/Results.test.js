@@ -1,11 +1,14 @@
 import React from 'react';
-import Results from './Results';
+import { Results } from './Results';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
+
 
 describe('Results', () => {
   let wrapper;
 
   beforeEach(() => {
+    mockRandom([0.1]);
     wrapper = shallow(<Results
       incorrectGuess={[
         {

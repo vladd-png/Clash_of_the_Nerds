@@ -11,7 +11,8 @@ exports[`Account should match snapshot 1`] = `
     's Account Page
   </h1>
   <div>
-    <Connect(TriviaResults)
+    <AccountResults
+      key="0.1"
       result={
         Object {
           "category": "Mythology",

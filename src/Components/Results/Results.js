@@ -5,11 +5,11 @@ import './Results.scss';
 
 export const Results = (props) => {
   const allWrong = props.incorrectGuess.map(guess => {
-    return <TriviaResults result={guess} />
+    return <TriviaResults key={Math.random()} result={guess} />
   })
   const allCorrect = props.correctGuess.map(guess => {
     if (props.correctGuess.length !== 0) {
-      return <TriviaResults result={guess} />
+      return <TriviaResults key={Math.random()} result={guess} />
     } else {
       return 'You Need To Study'
     }

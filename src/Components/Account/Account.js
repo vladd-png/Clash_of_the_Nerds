@@ -6,7 +6,7 @@ import AccountResults from '../AccountResults/AccountResults'
 
 export const Account = (props) => {
 
-  const triviaCards = props.saveTrivia.map(trivia => <AccountResults result={trivia}/>)
+  const triviaCards = props.saveTrivia.map(trivia => <AccountResults key={Math.random()} result={trivia}/>)
   return (
     <section className='account-page'>
       <h1 className='account-name'>{props.user[0].name}'s Account Page</h1>

@@ -3,7 +3,7 @@ import { TestContainer } from './TestContainer';
 import { shallow } from 'enzyme';
 
 describe('TestContainer', () => {
-  let mockTrivia = [
+  let mockTrivia = {trivia: [
     {
       category: 'Mythology',
       type: 'true/false',
@@ -22,7 +22,7 @@ describe('TestContainer', () => {
       incorrect_answers: ['Ares','Artemis','Apollo'],
       userGuess: 'Athena'
     }
-  ]
+  ]}
 
   it('should match snapshot', () => {
     let wrapper = shallow(<TestContainer
