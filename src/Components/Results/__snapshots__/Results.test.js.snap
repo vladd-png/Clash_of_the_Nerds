@@ -1,3 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Results should match snapshot 1`] = `undefined`;
+exports[`Results should match snapshot 1`] = `
+<section
+  id="all-results"
+>
+  <div
+    className="total-results"
+  >
+    <h1>
+      You Scored 
+      20
+       % Correct
+    </h1>
+  </div>
+  <div
+    className="total-results"
+    id="percent-correct"
+  >
+    <h1>
+      You Missed 
+      8
+       out of 10
+    </h1>
+  </div>
+  <div
+    className="wrong-results"
+  >
+    <h1
+      className="wrong-title"
+    >
+      You Missed
+    </h1>
+    <Connect(TriviaResults)
+      result={
+        Object {
+          "category": "Mythology",
+          "correct_answer": "The Sea",
+          "difficulty": "easy",
+          "incorrect_answers": Array [
+            "War",
+            "Sun",
+            "Fire",
+          ],
+          "question": "The greek god Poseidon was the god of what?",
+          "type": "multiple",
+          "userGuess": "War",
+        }
+      }
+    />
+  </div>
+  <div
+    className="correct-results"
+  >
+    <h1
+      className="wrong-title"
+    >
+      You Answered Correct
+    </h1>
+    <Connect(TriviaResults)
+      result={
+        Object {
+          "category": "Mythology",
+          "correct_answer": "true",
+          "difficulty": "easy",
+          "incorrect_answers": Array [
+            "false",
+          ],
+          "question": "Loki dressed as a woman in norse mythology",
+          "type": "true/false",
+          "userGuess": "true",
+        }
+      }
+    />
+    <Connect(TriviaResults)
+      result={
+        Object {
+          "category": "Mythology",
+          "correct_answer": "Athena",
+          "difficulty": "medium",
+          "incorrect_answers": Array [
+            "Ares",
+            "Artemis",
+            "Apollo",
+          ],
+          "question": "This Greek mythological figure is the god/goddess of battle strategy (among other things).",
+          "type": "multiple",
+          "userGuess": "Athena",
+        }
+      }
+    />
+  </div>
+</section>
+`;
