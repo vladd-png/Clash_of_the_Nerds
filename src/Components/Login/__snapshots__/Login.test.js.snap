@@ -3,6 +3,7 @@
 exports[`Login should match snapshot 1`] = `
 <form
   className="login-form"
+  onSubmit={[Function]}
 >
   <img
     alt="clash of the nerds logo"
@@ -70,16 +71,12 @@ exports[`Login should match snapshot 1`] = `
       Hard
     </option>
   </select>
-  <Link
-    to="/test"
+  <button
+    className="submit-btn"
+    onClick={[Function]}
+    type="submit"
   >
-    <button
-      className="submit-btn"
-      onClick={[Function]}
-      type="button"
-    >
-      Ready to Rumble
-    </button>
-  </Link>
+    Ready to Rumble
+  </button>
 </form>
 `;
