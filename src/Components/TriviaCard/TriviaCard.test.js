@@ -1,11 +1,13 @@
 import React from 'react';
 import { TriviaCard } from './TriviaCard';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
 
 describe('TriviaCard', () => {
   let wrapper, mockTrivia;
 
   beforeEach(() => {
+    mockRandom([0.1]);
     mockTrivia={
       category: 'Mythology',
       type: 'true/false',
