@@ -5,20 +5,11 @@ import { mockRandom } from 'jest-mock-random';
 import { addCorrectGuess, addIncorrectGuess } from '../../actions';
 
 describe('TriviaCard', () => {
-  let wrapper, mockTrivia;
+  let wrapper, trivia, loadCorrectGuessToStoreMock, loadIncorrectGuessToStoreMock;
 
   beforeEach(() => {
     mockRandom([0.1]);
-    mockTrivia={
-      category: 'Mythology',
-      type: 'true/false',
-      difficulty: 'easy',
-      question: 'Loki dressed as a woman in norse mythology',
-      correct_answer: 'true',
-      incorrect_answers: ['false'],
-      userGuess: 'true'
-    },
-    {
+    trivia={
       category: 'Mythology',
       type: 'multiple',
       difficulty: 'medium',
@@ -27,15 +18,60 @@ describe('TriviaCard', () => {
       incorrect_answers: ['Ares','Artemis','Apollo'],
       userGuess: 'Athena'
     };
+    loadCorrectGuessToStoreMock = jest.fn().mockImplementation();
+    loadIncorrectGuessToStoreMock = jest.fn().mockImplementation();
     wrapper = shallow(<TriviaCard
-      trivia={mockTrivia}
+      trivia={trivia}
       changeCard={jest.fn()}
+      loadCorrectGuessToStore={loadCorrectGuessToStoreMock}
+      loadIncorrectGuessToStore={loadIncorrectGuessToStoreMock}
       />)
   })
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
+
+  it('should update correct trivia question when updateChoice is called', () => {
+    let mockEvent = {
+      target: {
+        name: 'title',
+        value: 'Athena'
+      }
+    }
+    let mockResponse = {
+      category: 'Mythology',
+      type: 'multiple',
+      difficulty: 'medium',
+      question: 'This Greek mythological figure is the god/goddess of battle strategy (among other things).',
+      correct_answer: 'Athena',
+      incorrect_answers: ['Ares','Artemis','Apollo'],
+      userGuess: 'Correct!'
+    }
+    wrapper.instance().updateChoice(mockEvent)
+    expect(loadCorrectGuessToStoreMock).toHaveBeenCalledWith(mockResponse)
+  })
+
+
+    it('should update incorrect trivia question when updateChoice is called', () => {
+      let mockEvent = {
+        target: {
+          name: 'title',
+          value: 'Apollo'
+        }
+      }
+      let mockResponse = {
+        category: 'Mythology',
+        type: 'multiple',
+        difficulty: 'medium',
+        question: 'This Greek mythological figure is the god/goddess of battle strategy (among other things).',
+        correct_answer: 'Athena',
+        incorrect_answers: ['Ares','Artemis','Apollo'],
+        userGuess: 'Apollo'
+      }
+      wrapper.instance().updateChoice(mockEvent)
+      expect(loadIncorrectGuessToStoreMock).toHaveBeenCalledWith(mockResponse)
+    })
 
   it('should call dispatch with the addCorrectGuess action when loadCorrectGuessToStore is called', () => {
     const mockDispatch = jest.fn();

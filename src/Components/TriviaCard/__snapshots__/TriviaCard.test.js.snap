@@ -10,18 +10,36 @@ exports[`TriviaCard should match snapshot 1`] = `
       key="0.1"
       onClick={[Function]}
       type="button"
-      value="false"
+      value="Ares"
     >
-      false
+      Ares
     </button>
     <button
       className="trivia-choice"
       key="0.1"
       onClick={[Function]}
       type="button"
-      value="true"
+      value="Artemis"
     >
-      true
+      Artemis
+    </button>
+    <button
+      className="trivia-choice"
+      key="0.1"
+      onClick={[Function]}
+      type="button"
+      value="Apollo"
+    >
+      Apollo
+    </button>
+    <button
+      className="trivia-choice"
+      key="0.1"
+      onClick={[Function]}
+      type="button"
+      value="Athena"
+    >
+      Athena
     </button>
   </div>
 </div>
