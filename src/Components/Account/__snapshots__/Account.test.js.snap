@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account should match snapshot 1`] = `
+<section
+  className="account-page"
+>
+  <h1
+    className="account-name"
+  >
+    Jessica Rabbit
+    's Account Page
+  </h1>
+  <div>
+    <Connect(TriviaResults)
+      result={
+        Object {
+          "category": "Mythology",
+          "correct_answer": "The Sea",
+          "difficulty": "easy",
+          "incorrect_answers": Array [
+            "War",
+            "Sun",
+            "Fire",
+          ],
+          "question": "The greek god Poseidon was the god of what?",
+          "type": "multiple",
+        }
+      }
+    />
+  </div>
+</section>
+`;
