@@ -3,15 +3,7 @@ import './TriviaCard.scss';
 import { connect } from 'react-redux';
 import { addIncorrectGuess, addCorrectGuess } from '../../actions';
 
-
-// category: "Mythology"
-// type: "multiple"
-// difficulty: "easy"
-// question: "The greek god Poseidon was the god of what?"
-// correct_answer: "The Sea"
-// incorrect_answers: (3) ["War", "Sun", "Fire"]
-
-class TriviaCard extends Component{
+export class TriviaCard extends Component{
   constructor(props) {
     super(props)
     this.state = {
